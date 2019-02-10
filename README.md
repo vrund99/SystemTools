@@ -34,5 +34,9 @@
   <br>
   <br>
   
-  A tool to scane all the directories and files on your computer to detect viruses. Created for UGAHacks :microscope: :computer: ☣️
+  A tool to scan all the directories and files on your computer to detect viruses. Created for UGAHacks :microscope: :computer: ☣️
+ 
+ ## Notes:
+  - Its a proof of concept and a work in progress!
+  - Authors: Manu Puduvalli, Vrund Parikh, Vraj Patel
 </p>
