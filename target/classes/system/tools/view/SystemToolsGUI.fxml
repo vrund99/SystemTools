@@ -9,7 +9,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -17,107 +18,117 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.tools.controller.SystemToolsGUIController">
-   <children>
-      <VBox prefHeight="500.0" prefWidth="800.0">
-        <children>
-          <MenuBar VBox.vgrow="NEVER">
-            <menus>
-              <Menu mnemonicParsing="false" text="File">
-                <items>
-                  <MenuItem mnemonicParsing="false" text="Open…" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Preferences…" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#fileCloseOnAction" text="Quit" />
-                </items>
-              </Menu>
-              <Menu mnemonicParsing="false" text="Edit">
-                <items>
-                  <MenuItem mnemonicParsing="false" text="Undo" />
-                  <MenuItem mnemonicParsing="false" text="Redo" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Cut" />
-                  <MenuItem mnemonicParsing="false" text="Copy" />
-                  <MenuItem mnemonicParsing="false" text="Paste" />
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Select All" />
-                  <MenuItem mnemonicParsing="false" text="Unselect All" />
-                </items>
-              </Menu>
-              <Menu mnemonicParsing="false" text="Help">
-                <items>
-                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-                </items>
-              </Menu>
-            </menus>
-          </MenuBar>
-            <HBox prefHeight="475.0" prefWidth="800.0">
+<VBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.tools.controller.SystemToolsGUIController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#fileCloseOnAction" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox prefHeight="475.0" prefWidth="800.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="400.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="400.0">
+                  <VBox prefHeight="306.0" prefWidth="400.0">
                      <children>
-                        <VBox prefHeight="306.0" prefWidth="400.0">
+                        <VBox prefHeight="390.0" prefWidth="400.0" style="-fx-background-color: #495677;">
                            <children>
-                              <VBox prefHeight="390.0" prefWidth="400.0" style="-fx-background-color: #495677;">
+                              <VBox prefHeight="195.0" prefWidth="400.0">
                                  <children>
-                                    <VBox prefHeight="195.0" prefWidth="400.0" />
-                                    <JFXTextArea>
-                                       <padding>
-                                          <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
-                                       </padding>
-                                    </JFXTextArea>
+                                    <ImageView fitHeight="195.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Application_Logo/SystemTools.png" />
+                                       </image>
+                                    </ImageView>
                                  </children>
                               </VBox>
-                              <JFXButton buttonType="RAISED" prefHeight="59.0" prefWidth="400.0" ripplerFill="#0d5e11" style="-fx-background-color: #4CAF50;" text="START FULL SCAN" textFill="WHITE">
+                              <JFXTextArea editable="false" style="-fx-text-inner-color: #808783; -fx-background-color: linear-gradient(to bottom,  #38f094,  #29b56f);" text="ABOUT | A system tool to scan all the directories and files in your system to detect if there is a virus.">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
                                  <font>
-                                    <Font name="Calibri" size="25.0" />
+                                    <Font name="System Bold" size="22.0" />
                                  </font>
-                              </JFXButton>
+                              </JFXTextArea>
                            </children>
                         </VBox>
+                        <JFXButton fx:id="fsButton" buttonType="RAISED" onAction="#scanBtnOnAction" prefHeight="59.0" prefWidth="400.0" ripplerFill="#0d5e11" style="-fx-background-color: #4CAF50;" text="START FULL SCAN" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="25.0" />
+                           </font>
+                        </JFXButton>
                      </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #E0E0E0;">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="444.0" stroke="BLACK" strokeType="INSIDE" width="2.0" />
-                        <VBox prefHeight="444.0" prefWidth="417.0">
-                           <children>
-                              <VBox prefHeight="76.0" prefWidth="398.0" style="-fx-background-color: linear-gradient(to bottom, #556489,  #495677);">
-                                 <children>
-                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Not Scanning" textAlignment="CENTER" wrappingWidth="397.6708984375">
-                                       <font>
-                                          <Font name="System Bold" size="40.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <Separator prefWidth="200.0" style="-fx-background-color: #000000;" />
-                              <VBox prefHeight="393.0" prefWidth="398.0">
-                                 <children>
-                                    <JFXTextArea editable="false" focusColor="#4a5d97" prefHeight="393.0" prefWidth="398.0" style="-fx-background-color: #495677; -fx-text-inner-color: #FFFFFF;" text="Details: " unFocusColor="WHITE">
-                                       <padding>
-                                          <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
-                                       </padding>
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </JFXTextArea>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
+                  </VBox>
                </children>
             </HBox>
-            <VBox prefHeight="55.0" prefWidth="800.0">
+            <HBox prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #E0E0E0;">
                <children>
-                  <Separator prefHeight="16.0" prefWidth="800.0" style="-fx-background-color: #000000;" />
-                  <JFXProgressBar prefHeight="37.0" prefWidth="800.0" progress="0.01" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="444.0" stroke="BLACK" strokeType="INSIDE" width="2.0" />
+                  <VBox prefHeight="444.0" prefWidth="417.0">
+                     <children>
+                        <VBox prefHeight="76.0" prefWidth="398.0" style="-fx-background-color: linear-gradient(to bottom, #556489,  #495677);">
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Not Scanning" textAlignment="CENTER" wrappingWidth="397.6708984375">
+                                 <font>
+                                    <Font name="Consolas Bold" size="40.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </VBox>
+                        <Separator prefWidth="200.0" style="-fx-background-color: #000000;" />
+                        <VBox prefHeight="393.0" prefWidth="398.0">
+                           <children>
+                              <JFXTextArea editable="false" focusColor="#4a5d97" prefHeight="393.0" prefWidth="398.0" style="-fx-background-color: #495677; -fx-text-inner-color: #FFFFFF;" text="Details: " unFocusColor="WHITE">
+                                 <padding>
+                                    <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Consolas Bold" size="20.0" />
+                                 </font>
+                              </JFXTextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
-        </children>
+            </HBox>
+         </children>
+      </HBox>
+      <VBox prefHeight="55.0" prefWidth="800.0">
+         <children>
+            <Separator prefHeight="16.0" prefWidth="800.0" style="-fx-background-color: #000000;" />
+            <JFXProgressBar prefHeight="37.0" prefWidth="800.0" progress="0.01" />
+         </children>
       </VBox>
-   </children>
-</AnchorPane>
+  </children>
+</VBox>
